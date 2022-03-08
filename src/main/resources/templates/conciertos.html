@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Conciertos</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/conciertos.css">
+    </head>
+    <body>
+        <h1 th:text="${titulo}"></h1>
+
+
+
+
+        <h2><a href="nuevoConcierto">Crear Concierto</a></h2>
+
+
+
+
+        <table>
+            <thead class="conciertos">
+                <tr>
+                    <th scope="col">Artista</th>
+                    <th scope="col">Costo</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Capacidad de personas</th>
+                    <th scope="col">Lugar</th>
+
+            </thead>
+            <tbody class="resultados">
+
+            <th:block  th:each="concierto : ${conciertos}">
+                <tr>
+                    <td class="artista" th:text="${concierto.getArtista}"></td>
+                    <td class="costo" th:text="${concierto.getCosto}"></td>
+                    <td class="fecha" th:text="${concierto.getFecha}"></td>
+                    <td class="cappersonas" th:text="${concierto.getCappersonas}"></td>
+                    <td class="lugar" th:text="${concierto.getLugar}"></td>
+                    <td>
+                        <a th:href="@{/delete/{id}(id=${concierto.getId})}">Delete</a>
+                    </td>
+                </tr>
+            </th:block>
+
+
+        </tbody>
+    </table>
+</body>
+</html>

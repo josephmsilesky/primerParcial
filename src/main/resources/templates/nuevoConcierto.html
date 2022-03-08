@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>Conciertos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/conciertos.css">
+    </head>
+    <body>
+        <h1>Crear Concierto</h1>
+        
+        
+        <h2><a href="conciertos">Ver Concierto</a></h2>
+        
+        
+        <div class="form">
+            <form th:object = "${concierto}" th:action="@{/save}"method="POST">
+                <div class="form-group-row">
+                    <label for="artista">Artista</label>
+                    <input type="text" th:field="*{artista}" placeholder= "Nombre de artista" id="artistas">
+                </div>
+                <div class="form-group-row">
+                    <label for="costo">Costo</label>
+                    <input type="text" th:field="*{costo}" placeholder= "Costo del evento" id="costos">
+                </div>
+                <div class="form-group-row">
+                    <label for="fecha">Fecha</label>
+                    <input type="text" th:field="*{fecha}" placeholder= "Fecha del evento" id="fechas">
+                </div>
+                <div class="form-group-row">
+                    <label for="capacidad">Capacidad maxima de personas</label>
+                    <input type="text" th:field="*{cappersonas}" placeholder= "Capacidad maxima" id="capPersonasMax">
+                </div>
+                <div class="form-group-row">
+                    <label for="lugar">Lugar</label>
+                    <input type="text" th:field="*{lugar}" placeholder= "Lugar del evento" id="lugar">
+                </div>
+
+                <br>
+                <button class="btn" type="submit" value="Guardar">Submit</button>
+
+            </form>
+        </div>
+    </body>
+</html>
