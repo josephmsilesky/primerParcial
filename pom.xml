@@ -8,7 +8,7 @@
         <version>2.6.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.tienda</groupId>
+    <groupId>com.PrimerParcial</groupId>
     <artifactId>PrimerParcial</artifactId>
     <version>1</version>
     <name>PrimerParcial</name>
